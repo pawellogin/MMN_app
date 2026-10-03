@@ -11,6 +11,26 @@ export function isLang(value: string): value is Lang {
   return value === 'en' || value === 'pl'
 }
 
+/** First supported language from the browser / OS, otherwise English. */
+export function detectSystemLang(): Lang {
+  const candidates: string[] = []
+  if (typeof navigator !== 'undefined') {
+    if (Array.isArray(navigator.languages)) {
+      candidates.push(...navigator.languages)
+    }
+    if (navigator.language) {
+      candidates.push(navigator.language)
+    }
+  }
+
+  for (const raw of candidates) {
+    const code = raw.trim().toLowerCase().split('-')[0]
+    if (isLang(code)) return code
+  }
+
+  return 'en'
+}
+
 export function parseLocalized(
   value: unknown,
   fallback = '',

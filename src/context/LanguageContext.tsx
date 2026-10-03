@@ -2,11 +2,12 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react'
-import { isLang, type Lang } from '../i18n/localized'
+import { detectSystemLang, isLang, type Lang } from '../i18n/localized'
 import { translations } from '../i18n/translations'
 
 const STORAGE_KEY = 'mmn_lang'
@@ -26,11 +27,15 @@ function readStoredLang(): Lang {
   } catch {
     /* ignore */
   }
-  return 'en'
+  return detectSystemLang()
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(() => readStoredLang())
+
+  useEffect(() => {
+    document.documentElement.lang = lang
+  }, [lang])
 
   const setLang = useCallback((next: Lang) => {
     setLangState(next)
