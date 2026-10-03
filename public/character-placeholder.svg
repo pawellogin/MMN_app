@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Character placeholder">
+  <rect width="400" height="400" fill="#000"/>
+  <path
+    fill="none"
+    stroke="#af1921"
+    stroke-width="34"
+    stroke-linecap="round"
+    d="M134 156c0-53 132-53 132 0 0 38-66 50-66 100"
+  />
+  <circle cx="200" cy="309" r="21" fill="#af1921"/>
+</svg>

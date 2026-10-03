@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // PROTOTYPE ONLY — open rules so the web app can read/write without Auth.
+    // Tighten before any real game / public deploy.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

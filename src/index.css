@@ -1,0 +1,115 @@
+:root {
+  --mainfont: 'Oswald', sans-serif;
+  --darkcolor: #271e1e;
+  --primarycolor: #af1921;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: var(--mainfont);
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1::first-letter,
+h2::first-letter,
+h3::first-letter,
+h4::first-letter,
+h5::first-letter,
+h6::first-letter,
+p.title::first-letter {
+  text-transform: uppercase;
+}
+
+a {
+  transition: all 0.3s;
+}
+
+::selection {
+  background: var(--primarycolor);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cfcfcf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b5b5b5;
+}
+
+.ant-btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.ant-btn-variant-solid.ant-btn-color-primary:not(:disabled):hover {
+  background: #fff;
+  color: var(--primarycolor);
+  border-color: #fff;
+}
+
+.ant-btn-variant-link,
+.ant-btn-variant-text {
+  letter-spacing: 1px;
+}
+
+.ant-btn:disabled {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.ant-input,
+.ant-input-number-input,
+.ant-input-affix-wrapper input {
+  font-weight: 300;
+}
+
+.ant-form-item-label > label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.ant-card-head-title,
+.ant-modal-title,
+.ant-statistic-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ant-statistic-content-value {
+  color: var(--primarycolor);
+  font-weight: 600;
+}
+
+.ant-modal-content {
+  border-top: 2px solid var(--primarycolor);
+}
